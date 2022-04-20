@@ -7,7 +7,6 @@
     <list default="true" id="34150227-a308-4cdf-a2c9-d3ecce402dc9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sofkau/StringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sofkau/StringCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/sofkau/StringCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/sofkau/StringCalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +38,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.StringCalculatorTest.negativeNumbersThrowsAnExceptionTest">
+  <component name="RunManager" selected="JUnit.StringCalculatorTest">
     <configuration name="StringCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kata-TDD" />
       <extension name="coverage">
@@ -121,8 +120,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StringCalculatorTest.negativeNumbersThrowsAnExceptionTest" />
         <item itemvalue="JUnit.StringCalculatorTest" />
+        <item itemvalue="JUnit.StringCalculatorTest.negativeNumbersThrowsAnExceptionTest" />
         <item itemvalue="JUnit.StringCalculatorTest.singleCharDelimiterTest" />
         <item itemvalue="JUnit.StringCalculatorTest.emptyStringTest" />
         <item itemvalue="JUnit.StringCalculatorTest.greaterThan1000AreIgnoredTest" />

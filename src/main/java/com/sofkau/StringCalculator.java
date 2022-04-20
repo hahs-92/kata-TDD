@@ -10,7 +10,7 @@ public class StringCalculator {
             return 0;
         }
 
-        if(values.length() == 1) {
+        if(isLengthEqualThanOne(values)) {
             return Integer.parseInt(values);
         }
 
@@ -18,19 +18,24 @@ public class StringCalculator {
             throw new NumberFormatException("NegativeNumberException");
         }
 
-        if(values.charAt(0) == '#') {
+        if(containsFirstNumeralCharacter(values)) {
             values = values.replaceFirst("#", "");
         }
 
         var splitValues = splitValues(values);
+        return calc(parseIntValues(splitValues));
+    }
 
-        return parseIntValues(splitValues).stream()
-                .reduce(0, (acum, value) -> {
-                    if(value > 1000) {
-                        return acum;
-                    }
-                    return acum + value;
-                });
+    private int calc(List<Integer> list) {
+        return list.stream()
+                .reduce(0, this::limitValueTo1000);
+    }
+
+    private int limitValueTo1000(int acum, int value) {
+        if(value > 1000) {
+            return acum;
+        }
+        return value + acum;
     }
 
     private String[] splitValues (String values) {
@@ -42,5 +47,11 @@ public class StringCalculator {
                 .collect(Collectors.toList());
     }
 
-}
+    private boolean containsFirstNumeralCharacter(String values) {
+        return values.charAt(0) == '#';
+    }
 
+    private boolean isLengthEqualThanOne(String values) {
+        return values.length() == 1;
+    }
+}
