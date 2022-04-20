@@ -11,7 +11,7 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("An empty string returns zero")
-    public void emptyStringTest() throws Exception {
+    void emptyStringTest() throws Exception {
         //arrange
         String input = "";
         int expectValue = 0;
@@ -25,7 +25,7 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("A single number returns the value")
-    public void singleNumberReturnItsValueTest() throws Exception {
+    void singleNumberReturnItsValueTest() throws Exception {
         //arrange
         String input = "2";
         int expectValue = 2;
@@ -39,9 +39,9 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("Two numbers, comma delimited, returns the sum")
-    public void twoNumbersCommaDelimitedReturnsTheSumTest() throws Exception {
+    void twoNumbersCommaDelimitedReturnsTheSumTest() throws Exception {
         //arrange
-        String input = "2, 4";
+        String input = "2,4";
         int expectValue = 6;
 
         //act
@@ -53,7 +53,7 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("Two numbers, newline delimited, returns the sum")
-    public void sameThatBeforeButNewLineDelimitedTest() throws Exception {
+    void sameThatBeforeButNewLineDelimitedTest() throws Exception {
         //arrange
         String input = "2\n2";
         int expectValue = 4;
@@ -67,7 +67,7 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("Three numbers, delimited either way, returns the sum")
-    public void sameThatBeforeButAllDelimitersWorksTest() throws Exception {
+    void sameThatBeforeButAllDelimitersWorksTest() throws Exception {
         //arrange
         String input = "2\n2,3";
         int expectValue = 7;
@@ -79,16 +79,15 @@ public class StringCalculatorTest {
         assertEquals(expectValue, result);
     }
 
-    @Test
+    @Test()
     @DisplayName("Negative numbers throw an exception")
-    public void negativeNumbersThrowsAnExceptionTest() throws Exception {
+    void negativeNumbersThrowsAnExceptionTest() throws Exception {
         //arrange
-        String input = "-3, -1";
-        String expectValue = "Not negative numbers";
+        String input = "-1,-1";
+        String expectValue = "NegativeNumberException";
 
         //act
-        Exception exception = assertThrows(ArithmeticException.class, () -> stringCalculator.add(input));
-        var result = stringCalculator.add(input);
+        var exception = assertThrows(NumberFormatException.class, () -> stringCalculator.add(input));
 
         //Assert
         assertEquals(expectValue, exception.getMessage());
@@ -96,7 +95,7 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("Numbers greater than 1000 are ignored")
-    public void greaterThan1000AreIgnoredTest() throws Exception {
+    void greaterThan1000AreIgnoredTest() throws Exception {
         //arrange
         String input = "2,1001";
         int expectValue = 2;
@@ -110,7 +109,7 @@ public class StringCalculatorTest {
 
     @Test
     @DisplayName("A single char delimiter can be defined on the first line")
-    public void singleCharDelimiterTest() throws Exception {
+    void singleCharDelimiterTest() throws Exception {
         //arrange
         String input = "#2#1000";
         int expectValue = 1002;
